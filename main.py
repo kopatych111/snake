@@ -12,6 +12,8 @@ install_and_import('pygame')
 import os
 import random
 install_and_import('easygui')
+install_and_import('webbrowser')
+import webbrowser
 import pygame
 from easygui import *
 global username
@@ -81,12 +83,15 @@ def game_over():
     save_highscore()
     menu()
 
+def Amogus():
+    webbrowser.open_new('https://youtu.be/dQw4w9WgXcQ')
+
 
 #менюшка где можно поменять имя, сложность, начать играть, посмотреть таблицу лидеров и выйти
 #запускается только после игры
 def menu():
     message = 'Отличная игра, '+username+'! Вы набрали '+str(score)+' очков!'
-    choice = buttonbox(msg=message, title='змейка', choices=('играть заново', 'переименоваться', 'выбор сложности', 'посмотреть таблицу лидеров', 'выйти'))
+    choice = buttonbox(msg=message, title='змейка', choices=('играть заново', 'переименоваться', 'выбор сложности', 'посмотреть таблицу лидеров', 'выйти', 'эротический режим'))
     if choice == 'играть заново':
         play()
     if choice == 'переименоваться':
@@ -100,6 +105,8 @@ def menu():
         menu()
     if choice == 'выйти':
         exit()
+    if choice == 'эротический режим':
+        Amogus()
 
 
 #собственно игра
