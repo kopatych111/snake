@@ -136,8 +136,12 @@ def play():
     new_v = (spd, 0)
     col = snake_colors[mode]
     pygame.init()
-    pygame.mixer.music.load("nyeh.wav")
-    pygame.mixer.music.play(loops=100)
+    # добавляет музыку на фон, но не ломается если у игрока не скачан файл
+    try:
+        pygame.mixer.music.load("nyeh.wav")
+        pygame.mixer.music.play(loops=100)
+    except:
+        pass
 
     pygame.display.set_caption('супер-' + mode_name)
     screen = pygame.display.set_mode(window_size)
