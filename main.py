@@ -136,6 +136,9 @@ def play():
     new_v = (spd, 0)
     col = snake_colors[mode]
     pygame.init()
+    pygame.mixer.music.load("nyeh.wav")
+    pygame.mixer.music.play(loops=100)
+
     pygame.display.set_caption('супер-' + mode_name)
     screen = pygame.display.set_mode(window_size)
     screen.fill(background_color)
